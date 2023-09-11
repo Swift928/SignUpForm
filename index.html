@@ -6,48 +6,70 @@
     <title>Document</title>
     
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="./script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <div class="left-container">
-            <span class="city">Saltstraumen</span>
+            <div class="city">
+                <img src="./images/Norway_Logo_Positive_RGB.png" alt="">
+            </div>
             <img class="newImg" src="./images/taneli-lahtinen-NAHRvimeWHs-unsplash.jpg" alt="">
-            
         </div>
-       
-        
         <div class="right-container">
-            
             <header>
                 <h1>Lofoten</h1>
                 <p class="header-content">"Discover Lofoten: Where Adventure Meets Serenity"</p>
             </header>
-
             <form action="">
                 <h2>Live The Experience</h2>
                 <div class="form-row">
-                    <label for="name">Name</label>
-                    <input type="text" id="name">
+                    <label for="name" class="not-password-label form-label">Full Name</label>
+                    <input type="text" id="name" name="full-name" pattern="[A-Za-z]+ [A-Za-z]+" required autocomplete="name">
+                    <span class="error-message">Enter your full name. (e.g. Mary Sue)</span>
                 </div>
                 <div class="form-row">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email">
+                    <label for="email" class="not-password-label form-label">E-mail address</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                    <span class="error-message">Enter a valid email address.</span>
                 </div>
                 <div class="form-row">
-                    <label for="number">Phone number</label>
-                    <input type="number" id="number">
+                    <label for="number" class="not-password-label form-label">Phone number</label>
+                    <input type="tel" id="number" name="phone-number" autocomplete="tel-national" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
+                    <span class="error-message"> Please enter a valid 10-digit phone-number.</span>
                 </div>
                 <div class="form-row">
-                    <label for="password">Password</label>
-                    <input type="password" id="password">
+                        <span class="label-visibility-button-container">
+                            <label for="password" class="password-label form-label">Password</label>
+                            <button class="visibility-button first-button" type="button">
+                                <span class="material-symbols-outlined made-it">
+                                    visibility
+                                </span>
+                            </button>
+                        </span>
+                    <input type="password" id="password" class="first-password password" required minlength="8" maxlength="32" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$" error="Please enter a password.">
+                    <span class="error-message">Enter a password.</span>
+                    <span class="password-hint">Enter at least 1 letter, 1 number, and 1 symbol, with a minimum length of 8 characters.</span>
                 </div>
                 <div class="form-row">
-                    <label for="password">Confirm Password</label>
-                    <input type="password" id="password">
+                        <span class="label-visibility-button-container">
+                            <label for="second-password" class="password-label form-label">Confirm Password</label>
+                            <button class="visibility-button second-button" type="button">
+                                <span class="material-symbols-outlined">
+                                    visibility
+                                    </span>
+                            </button>
+                        </span>
+                    <input type="password" id="second-password" class="second-password password" required minlength="8" maxlength="32" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$">
+                    <span class="error-message">Enter a password.</span>
+                    <span class="password-hint">Enter at least 1 letter, 1 number, and 1 symbol, with a minimum length of 8 characters.</span>
                 </div>
                 <button>
-                    Sign-up
+                    Sign Up
                 </button>
             </form>
         </div>
