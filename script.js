@@ -3,7 +3,16 @@ let firstPassword = document.querySelector('.first-password')
 let secondPassword = document.querySelector('.second-password')
 let displayButton = document.querySelectorAll('.visibility-button')
 let passwordInput = document.querySelectorAll('.password')
+let form = document.querySelector('#form-element')
 
+
+// Checks if the passwords match
+form.addEventListener('submit', (e) => {
+    if (firstPassword.value !== secondPassword.value) {
+        e.preventDefault()
+        alert('Passwords do not match. Please try again.')
+    }
+})
 
 // This toggles the visibility button
 displayButton.forEach((button, index) => {
@@ -11,6 +20,7 @@ displayButton.forEach((button, index) => {
         if (passwordInput[index].type === 'password') {
             passwordInput[index].type = 'text'
             button.parentElement.querySelector('.material-symbols-outlined').textContent = 'visibility_off';
+            console.log(passwordInput[index].value)
         } else if (passwordInput[index].type === 'text') {
             passwordInput[index].type = 'password'
             button.parentElement.querySelector('.material-symbols-outlined').textContent = 'visibility';
