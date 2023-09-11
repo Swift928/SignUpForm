@@ -29,6 +29,22 @@ body {
     height: 40px;
 }
 
+.acknowledemetns {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    color: rgb(75, 120, 64);
+    padding: 10px;
+    font-size: .8rem;
+}
+
+.acknowledemetns a {
+    color: rgb(118, 147, 111);
+}
+
+
+
 .left-container {
     position: relative;
     height: 100%;
@@ -207,4 +223,7 @@ button {
         margin-bottom: 30px;
     }
 
+    .acknowledemetns {
+        font-size: .5rem;
+    }
 }
